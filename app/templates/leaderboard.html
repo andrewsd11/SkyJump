@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Sky Jump - Ranking</title>
+</head>
+<body>
+    <h1>Ranking</h1>
+    <ul>
+        {% for pontuacao in ranking %}
+            <li>{{ pontuacao.jogador.nome }} - {{ pontuacao.pontuacao }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fases</title>
+</head>
+<body>
+    <h1>Selecione uma Fase</h1>
+
+    <ul>
+        {% for fase in fases %}
+            <li>
+                <strong>Fase {{ fase.id }} - {{ fase.nome }}</strong><br>
+                <p>{{ fase.descricao }}</p> 
+                <a href="{% url 'iniciar_fase' fase.id %}" style="padding: 10px 20px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px;">
+                    Jogar esta fase
+                </a>
+            </li>
+            <hr>
+        {% empty %}
+            <p>Nenhuma fase disponível no momento.</p>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'index' %}" style="display: block; margin-top: 20px;">Voltar para a página inicial</a>
+</body>
+</html>
